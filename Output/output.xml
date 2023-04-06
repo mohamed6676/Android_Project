@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.11.2 on win32)" generated="20230406 12:35:45.913" rpa="false">
+<suite id="s1" name="004 DriverNewTrip" source="C:\Users\mohamed.ali\PycharmProjects\Android_Project\Tests\004_DriverNewTrip.robot">
+<test id="s1-t1" name="Driver starts a trip">
+<kw name="Make a trip with Mock Location" library="Driver-res">
+<arguments>
+<arg>${Trip}[Destination]</arg>
+<arg>${Trip}[Speed]</arg>
+</arguments>
+<kw name="Open The Mock Location" library="Driver-res">
+<kw name="Open The Mock Location Application" library="Android-res">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<arguments>
+<arg>http://localhost:${Appium_Port_Device1}/wd/hub</arg>
+<arg>platformName=android</arg>
+<arg>deviceName=${deviceOne}</arg>
+<arg>appPackage=ru.gavrikov.mocklocations</arg>
+<arg>appActivity=ru.gavrikov.mocklocations.MainActivity</arg>
+<arg>automationName=Uiautomator2</arg>
+<arg>noReset=true</arg>
+</arguments>
+<status status="PASS" starttime="20230406 12:35:46.054" endtime="20230406 12:35:55.248"></status>
+</kw>
+<status status="PASS" starttime="20230406 12:35:46.054" endtime="20230406 12:35:55.248"></status>
+</kw>
+<status status="PASS" starttime="20230406 12:35:46.054" endtime="20230406 12:35:55.248"></status>
+</kw>
+<kw name="Detect My Location" library="Driver-res">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${My_Location_Button}</arg>
+<arg>20</arg>
+</arguments>
+<msg timestamp="20230406 12:35:56.256" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="My Location"]</msg>
+<status status="PASS" starttime="20230406 12:35:55.248" endtime="20230406 12:35:56.256"></status>
+</kw>
+<kw name="Long Press" library="AppiumLibrary">
+<doc>*DEPRECATED!!* Since selenium v4, use other keywords.</doc>
+<arguments>
+<arg>${My_Location_Button}</arg>
+</arguments>
+<msg timestamp="20230406 12:35:56.256" level="WARN">Keyword 'AppiumLibrary.Long Press' is deprecated. Since selenium v4, use other keywords.</msg>
+<msg timestamp="20230406 12:35:59.187" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="My Location"]</msg>
+<status status="PASS" starttime="20230406 12:35:56.256" endtime="20230406 12:35:59.187"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${My_Location_Button}</arg>
+</arguments>
+<msg timestamp="20230406 12:35:59.189" level="INFO">Clicking element '//android.widget.ImageView[@content-desc="My Location"]'.</msg>
+<msg timestamp="20230406 12:36:00.796" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="My Location"]</msg>
+<status status="PASS" starttime="20230406 12:35:59.187" endtime="20230406 12:36:00.796"></status>
+</kw>
+<kw name="Long Press" library="AppiumLibrary">
+<doc>*DEPRECATED!!* Since selenium v4, use other keywords.</doc>
+<arguments>
+<arg>${start_location}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:00.796" level="WARN">Keyword 'AppiumLibrary.Long Press' is deprecated. Since selenium v4, use other keywords.</msg>
+<msg timestamp="20230406 12:36:04.329" level="INFO">xpath criteria: //hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout[2]/android.widget.ImageView</msg>
+<status status="PASS" starttime="20230406 12:36:00.796" endtime="20230406 12:36:04.329"></status>
+</kw>
+<status status="PASS" starttime="20230406 12:35:55.248" endtime="20230406 12:36:04.329"></status>
+</kw>
+<kw name="Select Destination and Speed and Go" library="Driver-res">
+<arguments>
+<arg>${Destination}</arg>
+<arg>${Speed}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Search_Mark}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:04.331" level="INFO">Clicking element 'ru.gavrikov.mocklocations:id/btsearch_mc'.</msg>
+<msg timestamp="20230406 12:36:06.376" level="INFO">criteria is ru.gavrikov.mocklocations:id/btsearch_mc</msg>
+<status status="PASS" starttime="20230406 12:36:04.330" endtime="20230406 12:36:06.376"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:06.473" level="INFO">xpath criteria: //android.widget.EditText[@text="Type an address"]</msg>
+<status status="PASS" starttime="20230406 12:36:06.376" endtime="20230406 12:36:06.473"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Search_Icon}</arg>
+<arg>${Destination}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:06.474" level="INFO">Typing text 'Qalyub' into text field '//android.widget.EditText[@text="Type an address"]'</msg>
+<msg timestamp="20230406 12:36:07.135" level="INFO">xpath criteria: //android.widget.EditText[@text="Type an address"]</msg>
+<status status="PASS" starttime="20230406 12:36:06.473" endtime="20230406 12:36:07.135"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Search_Ok_Button}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:07.188" level="INFO">criteria is ru.gavrikov.mocklocations:id/open_button</msg>
+<status status="PASS" starttime="20230406 12:36:07.135" endtime="20230406 12:36:07.188"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Search_Ok_Button}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:07.189" level="INFO">Clicking element 'id=ru.gavrikov.mocklocations:id/open_button'.</msg>
+<msg timestamp="20230406 12:36:07.764" level="INFO">criteria is ru.gavrikov.mocklocations:id/open_button</msg>
+<status status="PASS" starttime="20230406 12:36:07.188" endtime="20230406 12:36:07.764"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Done_Mark}</arg>
+<arg>20</arg>
+</arguments>
+<msg timestamp="20230406 12:36:10.187" level="INFO">criteria is ru.gavrikov.mocklocations:id/thre_button
+criteria is ru.gavrikov.mocklocations:id/thre_button
+criteria is ru.gavrikov.mocklocations:id/thre_button</msg>
+<status status="PASS" starttime="20230406 12:36:07.764" endtime="20230406 12:36:10.187"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Done_Mark}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:10.189" level="INFO">Clicking element 'id=ru.gavrikov.mocklocations:id/thre_button'.</msg>
+<msg timestamp="20230406 12:36:10.362" level="INFO">criteria is ru.gavrikov.mocklocations:id/thre_button</msg>
+<status status="PASS" starttime="20230406 12:36:10.187" endtime="20230406 12:36:10.362"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Specify_Speed_Field}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:11.819" level="INFO">criteria is ru.gavrikov.mocklocations:id/input_name_route_editText
+criteria is ru.gavrikov.mocklocations:id/input_name_route_editText</msg>
+<status status="PASS" starttime="20230406 12:36:10.362" endtime="20230406 12:36:11.819"></status>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<doc>Clears the text field identified by `locator`.</doc>
+<arguments>
+<arg>${Specify_Speed_Field}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:11.820" level="INFO">Clear text field 'id=ru.gavrikov.mocklocations:id/input_name_route_editText'</msg>
+<msg timestamp="20230406 12:36:11.942" level="INFO">criteria is ru.gavrikov.mocklocations:id/input_name_route_editText</msg>
+<status status="PASS" starttime="20230406 12:36:11.819" endtime="20230406 12:36:11.943"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Specify_Speed_Field}</arg>
+<arg>${Speed}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:11.944" level="INFO">Typing text '80' into text field 'id=ru.gavrikov.mocklocations:id/input_name_route_editText'</msg>
+<msg timestamp="20230406 12:36:12.572" level="INFO">criteria is ru.gavrikov.mocklocations:id/input_name_route_editText</msg>
+<status status="PASS" starttime="20230406 12:36:11.943" endtime="20230406 12:36:12.572"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${go_button}</arg>
+</arguments>
+<msg timestamp="20230406 12:36:12.573" level="INFO">Clicking element 'id=ru.gavrikov.mocklocations:id/start_servise_button'.</msg>
+<msg timestamp="20230406 12:36:13.207" level="INFO">criteria is ru.gavrikov.mocklocations:id/start_servise_button</msg>
+<status status="PASS" starttime="20230406 12:36:12.572" endtime="20230406 12:36:13.208"></status>
+</kw>
+<status status="PASS" starttime="20230406 12:36:04.329" endtime="20230406 12:36:13.208"></status>
+</kw>
+<status status="PASS" starttime="20230406 12:35:46.053" endtime="20230406 12:36:13.208"></status>
+</kw>
+<status status="PASS" starttime="20230406 12:35:46.053" endtime="20230406 12:36:13.208" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20230406 12:35:45.915" endtime="20230406 12:36:13.209"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="004 DriverNewTrip">004 DriverNewTrip</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230406 12:35:46.047" level="ERROR">Error in file 'C:\Users\mohamed.ali\PycharmProjects\Android_Project\Resources\Driver-res.robot' on line 5: Importing test library 'Swiping' failed: ModuleNotFoundError: No module named 'Swiping'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\mohamed.ali\AppData\Local\Programs\Python\Python311\Scripts\robot.exe
+  C:\Users\mohamed.ali\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\mohamed.ali\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\mohamed.ali\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\mohamed.ali\AppData\Local\Programs\Python\Python311
+  C:\Users\mohamed.ali\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+<msg timestamp="20230406 12:35:56.256" level="WARN">Keyword 'AppiumLibrary.Long Press' is deprecated. Since selenium v4, use other keywords.</msg>
+<msg timestamp="20230406 12:36:00.796" level="WARN">Keyword 'AppiumLibrary.Long Press' is deprecated. Since selenium v4, use other keywords.</msg>
+</errors>
+</robot>
