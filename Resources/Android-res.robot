@@ -24,7 +24,7 @@ ${Camera_Shutter_Button}                id=com.android.camera2:id/shutter_button
 ${Mark_Done_Button}                     id=com.android.camera2:id/done_button
 
 #*** Application Variables ***
-${AppPackage}           com.dsquares.mobilcare.test
+${AppPackage}           com.dsquares.mobilcare.staging
 ${AppActivity}          com.dsquares.mobilcare.launch.LaunchActivity
 
 #*** Login Screen ***
@@ -43,7 +43,7 @@ ${Continue_Button}  id=${AppPackage}:id/continue_button
 *** Keywords ***
 Open The MobilCare Application
     [Arguments]     ${Appium_Port}=${Appium_Port_Device1}      ${deviceName}=${SAMSUNG_A22}
-    Open Application    http://localhost:${Appium_Port}/wd/hub    platformName=android   deviceName=${deviceName}    appPackage=com.dsquares.mobilcare.test    appActivity=com.dsquares.mobilcare.launch.LaunchActivity   automationName=Uiautomator2   noReset=true
+    Open Application    http://localhost:${Appium_Port}/wd/hub    platformName=android   deviceName=${deviceName}    appPackage=com.dsquares.mobilcare.staging    appActivity=com.dsquares.mobilcare.launch.LaunchActivity   automationName=Uiautomator2   noReset=true
 
 Open The Mock Location Application
     open Application    http://localhost:${Appium_Port_Device1}/wd/hub     platformName=android    deviceName=${deviceOne}     appPackage=ru.gavrikov.mocklocations        appActivity=ru.gavrikov.mocklocations.MainActivity       automationName=Uiautomator2     noReset=true

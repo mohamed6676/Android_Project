@@ -12,4 +12,4 @@ ${Vehicle_Type}     bus
 
 #*** Trip Details ***
 ${Destination}      Qalyub
-${Speed}            80
+${Speed}            100

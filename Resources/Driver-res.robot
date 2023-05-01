@@ -38,7 +38,7 @@ ${Enable_Location_Button}       id=${AppPackage}:id/enableButton
 ${Enable_Location_ButtonSamsungA22}     com.android.permissioncontroller:id/allow_always_radio_button
 ${Back_Button}                  //android.widget.ImageButton[@content-desc="Back"]
 ${Allow_All_Time_Button}        id=com.android.permissioncontroller:id/permission_allow_button
-${Start_Driving_Button}         com.dsquares.mobilcare.test:id/checkList_startDriving
+${Start_Driving_Button}         id=${AppPackage}:id/checkList_startDriving
 
 #*** Profile Driver Screen ***
 ${Logout_Button}    id=${AppPackage}:id/logoutTv
@@ -46,12 +46,12 @@ ${Unregistered_Page_Message}    id=${AppPackage}:id/phoneHeaderTv
 ${Driver_Avatar_Icon}      id=${AppPackage}:id/driverAvatar
 
 #*** End Shift ***
-${End_Shift_Button}         com.dsquares.mobilcare.test:id/trip_endShift
-${Retry_Button}             com.dsquares.mobilcare.test:id/send
-${Distance_plate}=  Get Text      com.dsquares.mobilcare.test:id/tripResult_driver_mileage
-${OK_Button}            com.dsquares.mobilcare.test:id/tripResult_ok
-${Like_Button}          com.dsquares.mobilcare.test:id/tripFeedback_approved
-${FeedBack_OK_Button}   com.dsquares.mobilcare.test:id/tripFeedback_ok
+${End_Shift_Button}         id=${AppPackage}:id/trip_endShift
+${Retry_Button}             id=${AppPackage}:id/send
+${Distance_plate}=  Get Text      id=${AppPackage}:id/tripResult_driver_mileage
+${OK_Button}            id=${AppPackage}:id/tripResult_ok
+${Like_Button}          id=${AppPackage}:id/tripFeedback_approved
+${FeedBack_OK_Button}   id=${AppPackage}:id/tripFeedback_ok
 *** Keywords ***
 
 Login with Driver Account
@@ -93,7 +93,7 @@ Detect My Location
     wait until page contains element    ${My_Location_Button}       20
     long press                          ${My_Location_Button}
     click element                       ${My_Location_Button}
-#    Set the start location
+    Set the start location
     long press                          ${start_location}
 
 Select Destination and Speed and Go
@@ -141,7 +141,6 @@ Driver Starts the Trip
     wait until page contains element        ${Start_Driving_Button}
     Click Element                           ${Start_Driving_Button}
 #    click element at coordinates            300     440
-
 
 Driver Ends the Trip
     Open The MobilCare Application
